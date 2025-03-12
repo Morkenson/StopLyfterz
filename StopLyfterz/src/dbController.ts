@@ -1,0 +1,1 @@
+// Functions for our database such as login, register, and getting lifters cards and such.
