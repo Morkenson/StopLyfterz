@@ -37,6 +37,7 @@ const Dashboard: React.FC = () => {
                 </div>
                 <button onClick={() => navigate('/login')}>Login</button>
                 <button onClick={() => navigate('/admin')}>AdminPageForTesting</button>
+                <button onClick={() => navigate('/business')}>BusinessPageForTesting</button>
             </header>
             <div className="container">
                 {filteredBoxes.map((box, index) => (
