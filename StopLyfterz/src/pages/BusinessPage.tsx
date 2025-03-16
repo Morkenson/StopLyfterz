@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import '../assets/styles/Dashboard.css';
+import '../assets/styles/BusinessPage.css';
 
 
 
@@ -27,10 +27,13 @@ const Business: React.FC = () => {
         <div style={{ padding: '20px' }}>
             <header>
                 <h1>Business Dashboard</h1>
+                <button onClick={() => navigate('/')} className='custom-button'>Home Page</button>
+                <button className='logout-button'>Logout</button>
             </header>
             
             <section>
                 <h2>Posted Lyfterz</h2>
+                <hr></hr>
                 {posts.length > 0 ? (
                     <ul>
                         {posts.map(post => (
@@ -47,9 +50,16 @@ const Business: React.FC = () => {
             </section>
 
             <section>
-                <h2>Submit new lyfter</h2>
+                <h2>Pending Lyfterz</h2>
+                <hr></hr>
+                <p>No Lyfterz pending.</p>
+            </section>
+
+            <section>
+                <h2>Submit New Lyfter</h2>
+                <hr></hr>
                 <p>
-                    <button onClick={() => navigate('/form')}>Create new lyfter card</button>
+                    <button onClick={() => navigate('/form')} className='custom-button'>Create new lyfter card</button>
                 </p>
             </section>
 

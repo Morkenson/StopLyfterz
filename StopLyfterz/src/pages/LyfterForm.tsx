@@ -1,35 +1,20 @@
 import React, { useEffect, useState } from 'react';
-
-interface Post {
-    id: number;
-    name: string;
-    image: string;
-    description: string;
-}
-
+import { useNavigate } from 'react-router-dom'
+import '../assets/styles/BusinessPage.css';
 
 function LyfterForm() {
 
     const [submitting, setSubmitting] = useState(false);
-    const [posts, setPosts] = useState<Post[]>([]);
-    
-    // const handleSubmit = event => {
-    //     event.preventDefault();
-    //     setSubmitting(true);
-
-    //     setTimeout(() => {
-    //       setSubmitting(false);
-    //     }, 3000)      
-    // }    onSubmit={handleSubmit}
-    // <img src={image} alt='Lyfter Image' />
-
+    const navigate = useNavigate();
 
     return (
         <div style={{ padding: '20px' }}>
+            <header>
             <h1>Create new lyfter card</h1>
-            {submitting &&
-                <div>Submtting Form...</div>
-            }
+            <button onClick={() => navigate('/business')} className='custom-button'>Back to Dashboard</button>
+            <button className='logout-button'>Logout</button>
+            </header>
+            
             <section>
                 <form>
                     <fieldset>
@@ -47,7 +32,7 @@ function LyfterForm() {
                     <fieldset>    
                         <label>
                             <p>Description</p>
-                            <input name="description" />
+                            <textarea name="description" />
                         </label>
                     </fieldset>
                     <fieldset>    
@@ -57,6 +42,13 @@ function LyfterForm() {
                             
                         </label>
                     </fieldset>
+
+                    <p>
+                        After submitting, please allow StopLyfter Admins 2-3 weeks to review and approve your
+                            submission before it is posted publicly to the website. If 3+ weeks have expired
+                            and your submission has been neither approved/denied, please reach out to
+                            StopLyfter Admins.
+                    </p>
                     <button type="submit">Submit</button>
                 </form>
             </section>

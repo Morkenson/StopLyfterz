@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../assets/styles/Dashboard.css';
 
 const Login: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -13,7 +14,12 @@ const Login: React.FC = () => {
 
     return (
         <div>
-            <h1>Login</h1>
+            <header>
+                <h1>STOPLYFTERZ</h1>
+                <button onClick={() => navigate('/')} className='custom-button'>Home Page</button>
+            </header>
+
+            <h2>Login</h2>
             <form onSubmit={handleLogin}>
                 <div>
                     <label>Email:</label>
