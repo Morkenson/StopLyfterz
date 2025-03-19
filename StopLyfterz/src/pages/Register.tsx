@@ -1,5 +1,7 @@
+import { signUp } from '../dbController';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 
 const Register: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -8,9 +10,22 @@ const Register: React.FC = () => {
     const [message, setMessage] = useState<string | null>(null);
     const navigate = useNavigate();
 
-    const handleRegister = () => {
-        "something aswell";
-    };
+    const handleRegister = async(e: React.FormEvent) => {
+        e.preventDefault();
+        try {
+            const user = await signUp(email, password);
+            if (user) {
+              setMessage('Registration successful!');
+              //Send them to business page or something
+              
+            } else {
+              setError('Registration failed');
+            }
+          } catch (err: any) {
+            console.error('Error during registration:', err);
+            setError(err.message || 'An unexpected error occurred.');
+          }
+        };
 
     return (
         <div>
