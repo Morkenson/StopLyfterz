@@ -1,15 +1,34 @@
+import { login } from '../dbController';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/styles/Dashboard.css';
+
+
 
 const Login: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState<string | null>(null);
+    const [message, setMessage] = useState<string | null>(null);
     const navigate = useNavigate();
 
-    const handleLogin = () => {
-        "something prob troys job";
+    const handleLogin = async(e: React.FormEvent) => {
+        e.preventDefault();
+        setError(null);
+        setMessage(null);
+            try {
+                const user = await login(email, password);
+                if (user) {
+                  setMessage('Registration successful!');
+                  navigate('/business')
+                  
+                } else {
+                  setError('Login failed');
+                }
+              } catch (err: any) {
+                console.error('Error during registration:', err);
+                setError(err.message || 'An unexpected error occurred.');
+              }
     };
 
     return (

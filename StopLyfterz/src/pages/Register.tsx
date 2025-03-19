@@ -2,7 +2,6 @@ import { signUp } from '../dbController';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
 const Register: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -16,7 +15,7 @@ const Register: React.FC = () => {
             const user = await signUp(email, password);
             if (user) {
               setMessage('Registration successful!');
-              //Send them to business page or something
+              navigate('/login')
               
             } else {
               setError('Registration failed');

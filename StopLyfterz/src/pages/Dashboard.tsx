@@ -35,7 +35,7 @@ const Dashboard: React.FC = () => {
                         onChange={(e) => setFilter(e.target.value)}
                     />
                 </div>
-                <button onClick={() => navigate('/login')}>Login</button>
+                <button onClick={() => navigate('/login')}>BusinessLogin</button>
                 <button onClick={() => navigate('/admin')}>AdminPageForTesting</button>
                 <button onClick={() => navigate('/business')}>BusinessPageForTesting</button>
             </header>

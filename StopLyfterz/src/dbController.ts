@@ -17,17 +17,16 @@ export async function signUp(email: string, password: string) {
       }
     }
 
-  export async function login(email: string, password: string) {
-    const { data, error} = await supabase.auth.signUp({
+export async function login(email: string, password: string) {
+  try{
+    const { data, error} = await supabase.auth.signInWithPassword({
       email,
       password,
     });
-    if (error) {
-      console.error('Error logging in:', error);
+    return data.user;
+
+  } catch(err){
+      console.error('Error logging in:', err);
       return;
     }
-    console.log('Login successful:', data.user);
-    return data.user;
-  }
-
-  //signUp('morkzachb@gmail.com', '12345');
+}
