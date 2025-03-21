@@ -1,56 +1,37 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
-import '../assets/styles/Dashboard.css';
-
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../assets/styles/Dashboard.css";
+import { useLifterCards } from "../components/ListGroup"; // Import the hook
 
 const Dashboard: React.FC = () => {
-    
-    const [filter, setFilter] = useState('');
-    const navigate = useNavigate();
-    interface BoxData {
-        src: string;
-        alt: string;
-        description: string;
-    }
+  const [filter, setFilter] = useState("");
+  const navigate = useNavigate();
+  
+  // Get the pre-rendered component from the hook
+  const { LifterCardList } = useLifterCards(filter);
 
-    // Array of boxes (you can later fetch this data from database)
-    const boxes: BoxData[] = [
-        { src: 'images/photo1.jpg', alt: 'Photo 1', description: 'Platteville, WI' }
-    ];
-
-    const filteredBoxes = boxes.filter((box) =>
-        box.description.toLowerCase().includes(filter.toLowerCase())
-    );
-
-    return (
-        <div>
-            <header>
-                <h1>STOPLYFTERZ</h1>
-                <div className="search-bar">
-                    <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="Search photos by location..."
-                        value={filter}
-                        onChange={(e) => setFilter(e.target.value)}
-                    />
-                </div>
-                <button onClick={() => navigate('/login')}>BusinessLogin</button>
-                <button onClick={() => navigate('/admin')}>AdminPageForTesting</button>
-                <button onClick={() => navigate('/business')}>BusinessPageForTesting</button>
-            </header>
-            <div className="container">
-                {filteredBoxes.map((box, index) => (
-                    <div className="box" key={index}>
-                        <div className="box-content">
-                            <img src={box.src} alt={box.alt} />
-                        </div>
-                        <div className="description">{box.description}</div>
-                    </div>
-                ))}
-            </div>
+  return (
+    <div>
+      <header>
+        <h1>STOPLYFTERZ</h1>
+        <div className="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search photos by location..."
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+          />
         </div>
-    );
+        <button onClick={() => navigate("/login")}>BusinessLogin</button>
+        <button onClick={() => navigate("/admin")}>AdminPageForTesting</button>
+        <button onClick={() => navigate("/business")}>BusinessPageForTesting</button>
+      </header>
+
+      
+      <LifterCardList />
+    </div>
+  );
 };
 
 export default Dashboard;
