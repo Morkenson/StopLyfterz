@@ -5,7 +5,7 @@ import Register from './pages/Register';
 import Admin from './pages/AdminPage';
 import Business from './pages/BusinessPage';
 import Form from './pages/LyfterForm';
-import AddCard from './components/AddCard';
+//import AddCard from './components/AddCard';
 
 
 
@@ -20,7 +20,7 @@ function App() {
               <Route path="/business" element={<Business />} />
               <Route path="/form" element={<Form />} />
               <Route path="/business" element={<Business />} />
-                <Route path="/form" element={<AddCard />} />
+              {/* <Route path="/form" element={<AddCard />} /> */}
           </Routes>
       </Router>
   );

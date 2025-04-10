@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'
+//import '../assets/styles/BusinessPage.css';
+import '../assets/styles/Header.css';
 
 interface Post {
     id: number;
@@ -17,7 +20,7 @@ const Admin: React.FC = () => {
 
     const [posts, setPosts] = useState<Post[]>([]);
     const [pendingAccounts, setPendingAccounts] = useState<BusinessAccount[]>([]);
-    
+    const navigate = useNavigate();
 
     const handleAccept = (id: number) => {
         'something'
@@ -29,11 +32,31 @@ const Admin: React.FC = () => {
 
 
     return (
-        <div style={{ padding: '20px' }}>
-            <h1>Admin Dashboard</h1>
+        <div>
+            <header className="header-outer">
+	            <div className="header-inner responsive-wrapper">
+		            <h1>STOPLYFTERZ</h1>
+                    <div className='header-inner'>
+                        <h2>Admin Dashboard</h2>
+                    </div>
+		            <nav className="header-navigation">
+			            <a href="/">Home</a>
+			            <a href="#">About</a>
+			            <a href="#">Blog</a>
+			            <a href="#">Logout</a>
+		            </nav>
+	            </div>
+            </header>
+            {/* <header>
+                <h1>Admin Dashboard</h1>
+                <button onClick={() => navigate('/')} className='custom-button'>Home Page</button>
+                <button className='logout-button'>Logout</button>
+            </header> */}
 
-            <section>
+            <main className="main">
+            <div className="main-content responsive-wrapper">
                 <h2>Posted People</h2>
+                <hr></hr>
                 {posts.length > 0 ? (
                     <ul>
                         {posts.map(post => (
@@ -47,10 +70,10 @@ const Admin: React.FC = () => {
                 ) : (
                     <p>No posts available.</p>
                 )}
-            </section>
 
-            <section style={{ marginTop: '40px' }}>
+        
                 <h2>Pending Business Accounts</h2>
+                <hr></hr>
                 {pendingAccounts.length > 0 ? (
                     <ul>
                         {pendingAccounts.map(account => (
@@ -67,8 +90,10 @@ const Admin: React.FC = () => {
                 ) : (
                     <p>No pending business accounts.</p>
                 )}
-            </section>
+            </div>
+            </main>
         </div>
+    
     );
 };
 

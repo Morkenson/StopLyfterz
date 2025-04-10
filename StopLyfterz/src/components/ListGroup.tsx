@@ -1,7 +1,7 @@
-import { VStack } from "@chakra-ui/react";
-import AddCard from "./AddCard";
-import DeleteCard from "./DeleteCard";
-import EditCard from "./EditCard";
+//import { VStack } from "@chakra-ui/react";
+//import AddCard from "./AddCard";
+//import DeleteCard from "./DeleteCard";
+//import EditCard from "./EditCard";
 import { supabase } from "../supabaseClient"; // Adjusted path to match expected location
 import { useEffect, useState } from "react";
 import "../assets/styles/Dashboard.css";
