@@ -1,45 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\",
+  "WorkspaceRootPath": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\pages\\AdminPage.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\pages\\AdminPage.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StopLyfterz\\src\\pages\\AdminPage.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\pages\\Register.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\pages\\Register.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StopLyfterz\\src\\pages\\Register.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\pages\\Dashboard.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\pages\\Dashboard.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StopLyfterz\\src\\pages\\Dashboard.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\App.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\App.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StopLyfterz\\src\\App.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\pages\\Login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\pages\\Login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StopLyfterz\\src\\pages\\Login.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\dbController.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\dbController.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StopLyfterz\\src\\dbController.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StopLyfterz\\src\\main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\supabaseClient.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\supabaseClient.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StopLyfterz\\src\\supabaseClient.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\vite-env.d.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\vite-env.d.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StopLyfterz\\src\\vite-env.d.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\components\\ListGroup.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\components\\ListGroup.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StopLyfterz\\src\\components\\ListGroup.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     }
   ],
@@ -50,141 +50,134 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AdminPage.tsx",
-              "DocumentMoniker": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\pages\\AdminPage.tsx",
+              "DocumentMoniker": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\pages\\AdminPage.tsx",
               "RelativeDocumentMoniker": "StopLyfterz\\src\\pages\\AdminPage.tsx",
-              "ToolTip": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\pages\\AdminPage.tsx",
+              "ToolTip": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\pages\\AdminPage.tsx",
               "RelativeToolTip": "StopLyfterz\\src\\pages\\AdminPage.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-12T21:14:37.46Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T21:14:37.46Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Register.tsx",
-              "DocumentMoniker": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\pages\\Register.tsx",
+              "DocumentMoniker": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\pages\\Register.tsx",
               "RelativeDocumentMoniker": "StopLyfterz\\src\\pages\\Register.tsx",
-              "ToolTip": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\pages\\Register.tsx",
+              "ToolTip": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\pages\\Register.tsx",
               "RelativeToolTip": "StopLyfterz\\src\\pages\\Register.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-12T21:04:32.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T21:04:32.521Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "dbController.ts",
-              "DocumentMoniker": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\dbController.ts",
+              "DocumentMoniker": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\dbController.ts",
               "RelativeDocumentMoniker": "StopLyfterz\\src\\dbController.ts",
-              "ToolTip": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\dbController.ts",
+              "ToolTip": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\dbController.ts",
               "RelativeToolTip": "StopLyfterz\\src\\dbController.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-12T20:38:08.648Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T20:38:08.648Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Login.tsx",
-              "DocumentMoniker": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\pages\\Login.tsx",
+              "DocumentMoniker": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\pages\\Login.tsx",
               "RelativeDocumentMoniker": "StopLyfterz\\src\\pages\\Login.tsx",
-              "ToolTip": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\pages\\Login.tsx",
+              "ToolTip": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\pages\\Login.tsx",
               "RelativeToolTip": "StopLyfterz\\src\\pages\\Login.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-12T20:30:51.702Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T20:30:51.702Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Dashboard.tsx",
-              "DocumentMoniker": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\pages\\Dashboard.tsx",
+              "DocumentMoniker": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\pages\\Dashboard.tsx",
               "RelativeDocumentMoniker": "StopLyfterz\\src\\pages\\Dashboard.tsx",
-              "ToolTip": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\pages\\Dashboard.tsx",
+              "ToolTip": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\pages\\Dashboard.tsx",
               "RelativeToolTip": "StopLyfterz\\src\\pages\\Dashboard.tsx",
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwCcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-12T19:41:42.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T19:41:42.119Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "supabaseClient.ts",
-              "DocumentMoniker": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\supabaseClient.ts",
+              "DocumentMoniker": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\supabaseClient.ts",
               "RelativeDocumentMoniker": "StopLyfterz\\src\\supabaseClient.ts",
-              "ToolTip": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\supabaseClient.ts",
+              "ToolTip": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\supabaseClient.ts",
               "RelativeToolTip": "StopLyfterz\\src\\supabaseClient.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-12T19:21:18.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T19:21:18.01Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "ListGroup.tsx",
-              "DocumentMoniker": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\components\\ListGroup.tsx",
+              "DocumentMoniker": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\components\\ListGroup.tsx",
               "RelativeDocumentMoniker": "StopLyfterz\\src\\components\\ListGroup.tsx",
-              "ToolTip": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\components\\ListGroup.tsx",
+              "ToolTip": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\components\\ListGroup.tsx",
               "RelativeToolTip": "StopLyfterz\\src\\components\\ListGroup.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-12T18:29:20.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T18:29:20.953Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "vite-env.d.ts",
-              "DocumentMoniker": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\vite-env.d.ts",
+              "DocumentMoniker": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\vite-env.d.ts",
               "RelativeDocumentMoniker": "StopLyfterz\\src\\vite-env.d.ts",
-              "ToolTip": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\vite-env.d.ts",
+              "ToolTip": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\vite-env.d.ts",
               "RelativeToolTip": "StopLyfterz\\src\\vite-env.d.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-12T18:14:56.672Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T18:14:56.672Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "main.tsx",
-              "DocumentMoniker": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\main.tsx",
+              "DocumentMoniker": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\main.tsx",
               "RelativeDocumentMoniker": "StopLyfterz\\src\\main.tsx",
-              "ToolTip": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\main.tsx",
+              "ToolTip": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\main.tsx",
               "RelativeToolTip": "StopLyfterz\\src\\main.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-12T18:14:45.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T18:14:45.62Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "App.tsx",
-              "DocumentMoniker": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\App.tsx",
+              "DocumentMoniker": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\App.tsx",
               "RelativeDocumentMoniker": "StopLyfterz\\src\\App.tsx",
-              "ToolTip": "C:\\Users\\Zach Mork\\source\\repos\\stoplyfters\\StopLyfterz\\src\\App.tsx",
+              "ToolTip": "E:\\StopLyfters\\stoplyfters\\stoplyfters\\StopLyfterz\\src\\App.tsx",
               "RelativeToolTip": "StopLyfterz\\src\\App.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-03-12T18:14:36.779Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T18:14:36.779Z"
             }
           ]
         }

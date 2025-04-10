@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles/Dashboard.css";
-import { useLifterCards } from "../components/ListGroup"; // Import the hook
+import { useLifterCards } from "../components/ListCard"; // Import the hook
 
 const Dashboard: React.FC = () => {
   const [filter, setFilter] = useState("");

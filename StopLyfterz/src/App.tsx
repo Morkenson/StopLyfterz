@@ -20,7 +20,8 @@ function App() {
               <Route path="/business" element={<Business />} />
               <Route path="/form" element={<Form />} />
               <Route path="/business" element={<Business />} />
-                <Route path="/form" element={<AddCard />} />
+              <Route path="/form" element={<AddCard />} />
+              <Route path="/add-card" element={<AddCard />} />
           </Routes>
       </Router>
   );
