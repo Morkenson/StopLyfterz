@@ -7,6 +7,35 @@ function LyfterForm() {
     const [submitting, setSubmitting] = useState(false);
     const navigate = useNavigate();
 
+    const handleSubmit = async (event: React.FormEvent) => {
+        event.preventDefault();
+        setSubmitting(true);
+
+        const formData = new FormData(event.currentTarget as HTMLFormElement);
+        const name = formData.get('name') as string;
+        const location = formData.get('location') as string;
+        const description = formData.get('description') as string;
+        const image = formData.get('image') as File;
+
+        if (!name || !location || !description || !image) {
+            alert('Please fill in all fields and select an image.');
+            setSubmitting(false);
+            return;
+        }
+
+        navigate('/add-card', {
+            state: { company: name, location, description, file: image },
+        });
+
+        console.log({ name, location, description, image });
+        
+        // Reset the form after submission
+        (event.currentTarget as HTMLFormElement).reset();
+        
+        setSubmitting(false);
+    };
+      
+
     return (
         <div style={{ padding: '20px' }}>
             <header>
@@ -16,7 +45,7 @@ function LyfterForm() {
             </header>
             
             <section>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <fieldset>
                         <label>
                             <p>Name</p>
