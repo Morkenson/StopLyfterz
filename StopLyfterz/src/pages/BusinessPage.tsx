@@ -59,7 +59,7 @@ const Business: React.FC = () => {
                 <h2>Submit New Lyfter</h2>
                 <hr></hr>
                 <p>
-                    <button onClick={() => navigate('/form')} className='custom-button'>Create new lyfter card</button>
+                    <button onClick={() => navigate('/add-card')} className='custom-button'>Create new lyfter card</button>
                 </p>
             </section>
 
