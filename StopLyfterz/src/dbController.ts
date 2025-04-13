@@ -1,10 +1,5 @@
 // Functions for our database such as login, register, and getting lifters cards and such.
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string;
-const supabaseKey = import.meta.env.VITE_SUPABASE_KEY as string;
-
-const supabase = createClient(supabaseUrl, supabaseKey);
+import { supabase } from './supabaseClient';
 
 export async function signUp(email: string, password: string) {
     try {

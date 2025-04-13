@@ -15,7 +15,6 @@ export interface LifterCardData {
   Description: string;
 }
 
-
 // Custom hook that returns a pre-rendered component
 export function useLifterCards(filter: string) {
   const [lifterCards, setLifterCards] = useState<LifterCardData[]>([]);
@@ -53,10 +52,10 @@ export function useLifterCards(filter: string) {
               <div className="box-content">
                 <img src={lifter.Picture} alt={`Image of ${lifter.Picture}`} />
               </div>
-              <div className="description">
-                <strong>{lifter.Location}</strong>
-                <p>{lifter.Company}</p>
-                <p>{lifter.Description}</p>
+              <div>
+                <strong className="description">{lifter.Location}</strong>
+                <p className="description">{lifter.Company}</p>
+                <p className="lyfter-description">{lifter.Description}</p>
               </div>
             </div>
           ))
