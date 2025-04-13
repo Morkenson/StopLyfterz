@@ -1,3 +1,4 @@
+/* AddCard.css */
 .add-card-container {
     background-color: #1e1e1e;
     color: #ffffff;
@@ -6,33 +7,45 @@
     margin: 40px auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .add-card-header {
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.add-card-header {
     text-align: center;
     margin-bottom: 20px;
-  }
-  
-  .add-card-preview {
+}
+
+.add-card-preview {
     text-align: center;
     margin-bottom: 20px;
-  }
-  
-  .add-card-preview img {
-    max-width: 100%;
-    max-height: 300px;
-    border-radius: 8px;
-    border: 2px solid #444;
-  }
-  
-  .add-card-label {
+}
+
+    .add-card-preview img {
+        max-width: 100%;
+        max-height: 300px;
+        border-radius: 8px;
+        border: 2px solid #444;
+    }
+
+.add-card-label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-  }
-  
-  .add-card-input,
-  .add-card-textarea {
+}
+
+.add-card-input,
+.add-card-textarea {
     display: block;
     width: 100%;
     padding: 10px;
@@ -41,14 +54,14 @@
     color: #ffffff;
     border: 1px solid #444;
     border-radius: 4px;
-  }
-  
-  .add-card-textarea {
+}
+
+.add-card-textarea {
     resize: none;
     height: 100px;
-  }
-  
-  .add-card-button {
+}
+
+.add-card-button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -59,9 +72,9 @@
     cursor: pointer;
     font-weight: bold;
     text-align: center;
-  }
-  
-  .add-card-button:disabled {
-    background-color: #555;
-    cursor: not-allowed;
-  }
+}
+
+    .add-card-button:disabled {
+        background-color: #565;
+        cursor: not-allowed;
+    }

@@ -67,8 +67,10 @@ const AddCard: React.FC = (): JSX.Element => {
     setUploading(false);
   };
 
-  return (
-    <div className="add-card-container">
+    return (
+    
+     <div className="add-card-container">
+            <button className="close-btn" onClick={() => navigate('/business')}>{"\u2715"}</button>
       <h2 className="add-card-header">Create New Lifter Card</h2>
 
       {previewUrl && (
@@ -118,7 +120,8 @@ const AddCard: React.FC = (): JSX.Element => {
       >
         {uploading ? 'Submitting...' : 'Submit'}
       </button>
-    </div>
+            </div>
+   
   );
 };
 
