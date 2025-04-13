@@ -56,6 +56,13 @@ body {
 	justify-content: space-between;
 }
 
+.header-inner h2 {
+	position: absolute;
+	left: 50%;
+	white-space: nowrap;
+	transform: translateX(-50%);
+}
+
 /* Styling of other elements */
 .header-logo {
 	font-family: Arial, sans-serif;
@@ -112,7 +119,17 @@ body {
 	left: 0;
 }
 
-.header-navigation .custom-button a{
+.text-button {
+	background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+  }
+
+.custom-button {
     align-items: center;
     appearance: none;
     background-image: radial-gradient(100% 100% at 100% 0, #FF69B4 0, #c42c78 100%);

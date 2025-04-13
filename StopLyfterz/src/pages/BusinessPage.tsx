@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import '../assets/styles/BusinessPage.css';
-
+import '../assets/styles/Header.css';
 
 
 interface Post {
@@ -24,14 +23,21 @@ const Business: React.FC = () => {
 
 
     return (
-        <div style={{ padding: '20px' }}>
-            <header>
-                <h1>Business Dashboard</h1>
-                <button onClick={() => navigate('/')} className='custom-button'>Home Page</button>
-                <button className='logout-button'>Logout</button>
+        <div>
+            <header className="header-outer">
+	            <div className="header-inner responsive-wrapper">
+                    <h1><button onClick={() => navigate('/')} className='text-button'>STOPLYFTERZ</button></h1>
+                    <div className='header-inner'>
+                        <h2>Business Dashboard</h2>
+                    </div>
+		            <nav className="header-navigation">
+			            <a href="#">Logout</a>
+		            </nav>
+	            </div>
             </header>
             
-            <section>
+            <main className="main">
+            <div className="main-content responsive-wrapper">
                 <h2>Posted Lyfterz</h2>
                 <hr></hr>
                 {posts.length > 0 ? (
@@ -47,22 +53,18 @@ const Business: React.FC = () => {
                 ) : (
                     <p>No posts available.</p>
                 )}
-            </section>
 
-            <section>
                 <h2>Pending Lyfterz</h2>
                 <hr></hr>
                 <p>No Lyfterz pending.</p>
-            </section>
 
-            <section>
                 <h2>Submit New Lyfter</h2>
                 <hr></hr>
                 <p>
                     <button onClick={() => navigate('/form')} className='custom-button'>Create new lyfter card</button>
                 </p>
-            </section>
-
+            </div>     
+            </main>   
         </div>    
     );
 };

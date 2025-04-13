@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-//import '../assets/styles/BusinessPage.css';
 import '../assets/styles/Header.css';
 
 interface Post {
@@ -35,23 +34,15 @@ const Admin: React.FC = () => {
         <div>
             <header className="header-outer">
 	            <div className="header-inner responsive-wrapper">
-		            <h1>STOPLYFTERZ</h1>
+		            <h1><button onClick={() => navigate('/')} className='text-button'>STOPLYFTERZ</button></h1>
                     <div className='header-inner'>
                         <h2>Admin Dashboard</h2>
                     </div>
 		            <nav className="header-navigation">
-			            <a href="/">Home</a>
-			            <a href="#">About</a>
-			            <a href="#">Blog</a>
 			            <a href="#">Logout</a>
 		            </nav>
 	            </div>
             </header>
-            {/* <header>
-                <h1>Admin Dashboard</h1>
-                <button onClick={() => navigate('/')} className='custom-button'>Home Page</button>
-                <button className='logout-button'>Logout</button>
-            </header> */}
 
             <main className="main">
             <div className="main-content responsive-wrapper">
