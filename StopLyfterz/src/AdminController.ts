@@ -1,10 +1,9 @@
 import { supabase } from './supabaseClient';
 
 export interface Profile {
-    id: string;
-    email: string;
-    role: string;
-    authorized: boolean;
+    Email: string;
+    Level: string;
+    Authorized: boolean;
   }
   
   /**
@@ -12,40 +11,61 @@ export interface Profile {
    * Here we filter for those with authorized=false.
    */
   export async function fetchPendingBusinessAccounts(): Promise<Profile[]> {
-    const { data, error } = await supabase
-      .from('profiles')
-      .select('*')
-      .eq('authorized', false);
-    if (error) {
+    try {
+      const { data, error } = await supabase
+        .from('Profiles')
+        .select('*')
+        .eq('Authorized', false);
+        
+      if (error) {
+        throw new Error(error.message);
+      }
+      return data as Profile[];
+    } catch (error) {
+      console.error('Error fetching pending business accounts:', error);
       throw error;
     }
-    return data as Profile[];
   }
   
   /**
    * Approve a business account by setting authorized to true.
    */
-  export async function approveBusinessAccount(id: string) {
-    const { data, error } = await supabase
-      .from('profiles')
-      .update({ authorized: true })
-      .eq('id', id);
-    if (error) {
+  export async function approveBusinessAccount(email: string): Promise<Profile> {
+    try {
+      const { data, error } = await supabase
+        .from('Profiles')
+        .update({ Authorized: true })
+        .eq('Email', email)
+        .select()
+        .single();
+        
+      if (error || !data) {
+        throw new Error(error?.message || 'Failed to approve business account');
+      }
+      return data as Profile;
+    } catch (error) {
+      console.error('Error approving business account:', error);
       throw error;
     }
-    return data;
   }
-  
   /**
    * Deny a business account by deleting the profile (or you could mark it as denied).
    */
-  export async function denyBusinessAccount(id: string) {
-    const { data, error } = await supabase
-      .from('profiles')
-      .delete()
-      .eq('id', id);
-    if (error) {
+  export async function rejectBusinessAccount(email: string): Promise<Profile> {
+    try {
+      const { data, error } = await supabase
+        .from('Profiles')
+        .delete()
+        .eq('Email', email)
+        .select()
+        .single();
+        
+      if (error || !data) {
+        throw new Error(error?.message || 'Failed to reject business account');
+      }
+      return data as Profile;
+    } catch (error) {
+      console.error('Error rejecting business account:', error);
       throw error;
     }
-    return data;
   }

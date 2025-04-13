@@ -3,47 +3,41 @@ import React, { useEffect, useState } from 'react';
 import {
   fetchPendingBusinessAccounts,
   approveBusinessAccount,
-  denyBusinessAccount,
-  Profile
+  rejectBusinessAccount,
+  Profile,
 } from '../AdminController';
 
 const Admin: React.FC = () => {
   const [pendingAccounts, setPendingAccounts] = useState<Profile[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch pending accounts when the component mounts
   useEffect(() => {
-    async function fetchData() {
+    async function loadPending() {
       try {
-        const pending = await fetchPendingBusinessAccounts();
-        setPendingAccounts(pending);
+        const profiles = await fetchPendingBusinessAccounts();
+        setPendingAccounts(profiles);
       } catch (err: any) {
-        setError('Error fetching pending accounts.');
-        console.error(err);
+        setError(err.message);
       }
     }
-    fetchData();
+    loadPending();
   }, []);
 
-  // Handler for approving a business account
-  const handleApprove = async (id: string) => {
+  const handleApprove = async (email: string) => {
     try {
-      await approveBusinessAccount(id);
-      setPendingAccounts(pendingAccounts.filter(account => account.id !== id));
+      await approveBusinessAccount(email);
+      setPendingAccounts(pendingAccounts.filter((acc) => acc.Email !== email));
     } catch (err: any) {
-      console.error('Error approving account:', err);
-      setError('Error approving account.');
+      setError(err.message);
     }
   };
 
-  // Handler for denying a business account
-  const handleDeny = async (id: string) => {
+  const handleReject = async (email: string) => {
     try {
-      await denyBusinessAccount(id);
-      setPendingAccounts(pendingAccounts.filter(account => account.id !== id));
+      await rejectBusinessAccount(email);
+      setPendingAccounts(pendingAccounts.filter((acc) => acc.Email !== email));
     } catch (err: any) {
-      console.error('Error denying account:', err);
-      setError('Error denying account.');
+      setError(err.message);
     }
   };
 
@@ -51,19 +45,23 @@ const Admin: React.FC = () => {
     <div style={{ padding: '20px' }}>
       <h1>Admin Dashboard</h1>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      
       <section>
         <h2>Pending Business Accounts</h2>
         {pendingAccounts.length > 0 ? (
           <ul>
-            {pendingAccounts.map(account => (
-              <li key={account.id} style={{ marginBottom: '10px' }}>
-                <p>Email: {account.email}</p>
-                <p>Role: {account.role}</p>
-                <button onClick={() => handleApprove(account.id)} style={{ marginRight: '10px' }}>
+            {pendingAccounts.map((account) => (
+              <li key={account.Email} style={{ marginBottom: '10px' }}>
+                <p>Email: {account.Email}</p>
+                <p>Level: {account.Level}</p>
+                <button
+                  onClick={() => handleApprove(account.Email)}
+                  style={{ marginRight: '10px' }}
+                >
                   Approve
                 </button>
-                <button onClick={() => handleDeny(account.id)}>Deny</button>
+                <button onClick={() => handleReject(account.Email)}>
+                  Reject
+                </button>
               </li>
             ))}
           </ul>
