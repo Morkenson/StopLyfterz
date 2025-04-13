@@ -1,14 +1,22 @@
 ﻿
+:root {
+    --headerColor: #DADADA;
+    --buttonColor: #A4B494;
+    --ombreColor: #819489;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #FF69B4;
+    min-height: auto;
 }
 
 
 header {
-    background: #FFF600;
+    background: var(--headerColor);
     padding: 20px;
+    margin: 10px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -22,12 +30,13 @@ header {
 
 
 .search-bar {
-    margin-top: 10px;
+    margin-top: 20px;
+    text-align: center;
 }
 
     .search-bar input {
         width: 80%;
-        max-width: 400px;
+        max-width: 800px;
         padding: 10px;
         font-size: 1em;
         border: 1px solid #ccc;
@@ -36,42 +45,51 @@ header {
 
 
 .container {
+    min-width: 90%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 50px;
+    padding: 30px;
     max-height: calc(100vh - 100px);
     overflow-y: auto;
-    color: blue;
 }
 
+.testingButtons {
+    margin-top: 10px;
+    text-align: center;
+}
 
 .box {
-    background: #FFF;
+    background: #E2E5DC;
     border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0, 0, .4, 0.4);
-    height: 17rem;
+    padding: 15px;
+    align-content: center;
+    box-shadow: 4px -4px 15px rgba(0, 0, 0.4, 0.4);
+    height: 24rem;
     width: 15rem;
 }
 
 .box-content {
     background: #000;
-    height: 15rem;
-    width: 15rem;
+    height: 12rem;
+    width: 12rem;
     margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
 }
 
     .box-content img {
         width: 100%;
         height: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         object-fit: cover;
     }
+
+.lyfter-description {
+    font-size: 1em;
+    color: #333;
+}
 
 .description {
     font-size: 1.5em;
@@ -79,7 +97,7 @@ header {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 80%) {
     .container {
         grid-template-columns: 1fr;
     }
