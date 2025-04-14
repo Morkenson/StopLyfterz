@@ -53,9 +53,9 @@ export function useLifterCards(filter: string) {
                 <img src={lifter.Picture} alt={`Image of ${lifter.Picture}`} />
               </div>
               <div>
-                <strong className="description">{lifter.Location}</strong>
-                <p className="description">{lifter.Company}</p>
-                <p className="lyfter-description">{lifter.Description}</p>
+                <strong className="description">Location: {lifter.Location}</strong>
+                <p className="description">Company: {lifter.Company}</p>
+                <p className="lyfter-description"> Description: {lifter.Description}</p>
               </div>
             </div>
           ))

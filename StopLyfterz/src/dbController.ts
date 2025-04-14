@@ -53,3 +53,22 @@ export async function createProfile(
     throw error;
   }
 }
+
+export async function getAccountRole(email: string): Promise<string> {
+  try {
+    const { data, error } = await supabase
+      .from('Profiles')
+      .select('Level')
+      .eq('Email', email)
+      .single();
+
+    if (error || !data) {
+      throw new Error(error?.message || 'Account not found');
+    }
+    // Assuming "Level" is the field where the role is stored.
+    return data.Level as string;
+  } catch (err) {
+    console.error('Error getting account role:', err);
+    throw err;
+  }
+}

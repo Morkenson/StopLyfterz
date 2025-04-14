@@ -27,7 +27,6 @@ const Register: React.FC = () => {
                 } 
                 else {
                     await createProfile(email, 'business', false);
-                    
                 }
               
             } else {
@@ -41,7 +40,15 @@ const Register: React.FC = () => {
 
     return (
         <div>
-            <h1>Register</h1>
+      <header>
+        <h1>STOPLYFTERZ</h1>
+        <button onClick={() => navigate("/")} className="custom-button">
+          Home Page
+        </button>
+      </header>
+
+        <div className="main-content">
+            <h2>Register</h2>
             <form onSubmit={handleRegister}>
                 <div>
                     <label>Email:</label>
@@ -65,6 +72,7 @@ const Register: React.FC = () => {
             </form>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             {message && <p style={{ color: 'green' }}>{message}</p>}
+        </div>
         </div>
     );
 };

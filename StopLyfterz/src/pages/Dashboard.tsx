@@ -41,15 +41,9 @@ const Dashboard: React.FC = () => {
           onChange={(e) => setFilter(e.target.value)}
         />
       </div>
-      {/* <header>
-        <h1>STOPLYFTERZ</h1>
-        
-        
-      </header> */}
-
-      <div className="displayLyfterCards">
+      
         <LifterCardList />
-      </div>
+    
     </div>
   );
 };

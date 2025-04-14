@@ -1,8 +1,10 @@
 import { login } from "../dbController";
+import { getAccountRole } from "../dbController";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles/Dashboard.css";
 import "../assets/styles/CustomButton.css";
+import "../assets/styles/Login.css";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -19,11 +21,21 @@ const Login: React.FC = () => {
       const user = await login(email, password);
       if (user) {
         setMessage("Registration successful!");
-        navigate("/business");
-      } else {
+
+        const level = await getAccountRole(email);
+
+        if (level == 'admin') {
+          navigate("/admin");
+        } 
+        else {
+          navigate("/business");
+        }
+      } 
+      else {
         setError("Login failed");
       }
-    } catch (err: any) {
+    }
+    catch (err: any) {
       console.error("Error during registration:", err);
       setError(err.message || "An unexpected error occurred.");
     }
@@ -38,14 +50,8 @@ const Login: React.FC = () => {
         </button>
       </header>
 
-      <div className="testingButtons">
-        <button onClick={() => navigate("/admin")} className="custom-button">
-          Admin Page (For Testing)
-        </button>
-        <button onClick={() => navigate("/business")} className="custom-button">
-          Business Page (For Testing)
-        </button>
-      </div>
+        
+      <div className="main-content">
 
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
@@ -71,6 +77,7 @@ const Login: React.FC = () => {
         <button onClick={() => navigate("/register")}>Sign Up</button>
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
+    </div>
     </div>
   );
 };
