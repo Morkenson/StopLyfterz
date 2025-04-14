@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles/Header.css";
 import "../assets/styles/CustomButton.css";
+import "../assets/styles/Header.css";
+import logo from "../assets/pictures/logo.png";
 
 interface Post {
   id: number;
@@ -11,6 +13,7 @@ interface Post {
 }
 
 const Business: React.FC = () => {
+  const [filter, setFilter] = useState("");
   const [posts, setPosts] = useState<Post[]>([]);
   const navigate = useNavigate();
   interface BoxData {
@@ -20,39 +23,46 @@ const Business: React.FC = () => {
   }
 
 
-    return (
-        <div style={{ padding: '20px' }}>
-            <header className="header-outer">
-                <div className="header-inner responsive-wrapper">
-                    <nav className="header-navigation-logo">
-                        <a href="/">STOPLYFTERZ</a>
-                    </nav>
-                    <div className="header-inner">
-                        <h1>Dashboard</h1>
-                    </div>
-                    <nav className="header-navigation">
-                        <a href="/login">Login</a>
-                    </nav>
-                </div>
-            </header>
-            
-            <section>
-                <h2>Posted Lyfterz</h2>
-                <hr></hr>
-                {posts.length > 0 ? (
-                    <ul>
-                        {posts.map(post => (
-                            <li key={post.id} style={{ marginBottom: '10px' }}>
-                                <img src={post.image} alt={post.name} style={{ width: '100px', marginRight: '10px' }} />
-                                <strong>{post.name}</strong>
-                                <p>{post.description}</p>
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    <p>No posts available.</p>
-                )}
-            </section>
+  return (
+    <div >
+      <header className="header-outer">
+        <div className="header-inner responsive-wrapper">
+        <nav className="header-navigation-logo">
+          <a href="/">
+            <img
+              src={logo} 
+              alt="StopLyfterz Logo"
+              className="header-logo"
+            />
+          </a>
+        </nav>
+          <nav className="header-navigation">
+            <a href="/login">Logout</a>
+          </nav>
+        </div>
+      </header>
+
+      <section>
+        <h2>Posted Lyfterz</h2>
+        <hr></hr>
+        {posts.length > 0 ? (
+          <ul>
+            {posts.map((post) => (
+              <li key={post.id} style={{ marginBottom: "10px" }}>
+                <img
+                  src={post.image}
+                  alt={post.name}
+                  style={{ width: "100px", marginRight: "10px" }}
+                />
+                <strong>{post.name}</strong>
+                <p>{post.description}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No posts available.</p>
+        )}
+      </section>
 
             <section>
                 <h2>Pending Lyfterz</h2>
@@ -60,16 +70,17 @@ const Business: React.FC = () => {
                 <p>No Lyfterz pending.</p>
             </section>
 
-            <section>
-                <h2>Submit New Lyfter</h2>
-                <hr></hr>
-                <p>
-                    <button onClick={() => navigate('/form')} className='custom-button'>Create new lyfter card</button>
-                </p>
-            </section>
-
-        </div>    
-    );
+      <section>
+        <h2>Submit New Lyfter</h2>
+        <hr></hr>
+        <p>
+          <button onClick={() => navigate("/add-card")} className="custom-button">
+            Create new lyfter card
+          </button>
+        </p>
+      </section>
+    </div>
+  );
 };
 
 export default Business;

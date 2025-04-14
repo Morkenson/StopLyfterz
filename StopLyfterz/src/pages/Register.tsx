@@ -1,4 +1,5 @@
 import { signUp } from '../dbController';
+import { createProfile } from '../dbController';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,6 +10,8 @@ const Register: React.FC = () => {
     const [message, setMessage] = useState<string | null>(null);
     const navigate = useNavigate();
 
+    const adminList = ['morkzachb@gmail.com'];
+
     const handleRegister = async(e: React.FormEvent) => {
         e.preventDefault();
         try {
@@ -16,6 +19,15 @@ const Register: React.FC = () => {
             if (user) {
               setMessage('Registration successful!');
               navigate('/login')
+
+              const isAdmin = adminList.map(admin => admin.toLowerCase()).includes(email.toLowerCase());
+
+                if (isAdmin) {
+                    await createProfile(email, 'admin', true);
+                } 
+                else {
+                    await createProfile(email, 'business', false);
+                }
               
             } else {
               setError('Registration failed');
@@ -28,7 +40,15 @@ const Register: React.FC = () => {
 
     return (
         <div>
-            <h1>Register</h1>
+      <header>
+        <h1>STOPLYFTERZ</h1>
+        <button onClick={() => navigate("/")} className="custom-button">
+          Home Page
+        </button>
+      </header>
+
+        <div className="main-content">
+            <h2>Register</h2>
             <form onSubmit={handleRegister}>
                 <div>
                     <label>Email:</label>
@@ -52,6 +72,7 @@ const Register: React.FC = () => {
             </form>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             {message && <p style={{ color: 'green' }}>{message}</p>}
+        </div>
         </div>
     );
 };

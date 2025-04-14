@@ -5,6 +5,7 @@
 import { supabase } from "../supabaseClient"; // Adjusted path to match expected location
 import { useEffect, useState } from "react";
 import "../assets/styles/Dashboard.css";
+import "../assets/styles/ListCard.css";
 
 // Define TypeScript type for LifterCard
 export interface LifterCardData {
@@ -43,25 +44,27 @@ export function useLifterCards(filter: string) {
   // Return a pre-rendered component
   return {
     LifterCardList: () => (
-      <div className="container">
-        {loading ? (
-          <p className="text-center text-gray-600">Loading...</p>
-        ) : filteredCards.length > 0 ? (
-          filteredCards.map((lifter) => (
-            <div className="box" key={lifter.id}>
-              <div className="box-content">
-                <img src={lifter.Picture} alt={`Image of ${lifter.Picture}`} />
+      <div className="page-background">
+        <div className="container">
+          {loading ? (
+            <p className="text-center text-gray-600">Loading...</p>
+          ) : filteredCards.length > 0 ? (
+            filteredCards.map((lifter) => (
+              <div className="box" key={lifter.id}>
+                <div className="box-content">
+                  <img src={lifter.Picture} alt={`Image of ${lifter.Picture}`} />
+                </div>
+                <div>
+                  <strong className="description">Location: {lifter.Location}</strong>
+                  <p className="description">Company: {lifter.Company}</p>
+                  <p className="lyfter-description"> Description: {lifter.Description}</p>
+                </div>
               </div>
-              <div>
-                <strong className="description">{lifter.Location}</strong>
-                <p className="description">{lifter.Company}</p>
-                <p className="lyfter-description">{lifter.Description}</p>
-              </div>
-            </div>
-          ))
-        ) : (
-          <p className="text-center text-gray-600">No records found.</p>
-        )}
+            ))
+          ) : (
+            <p className="text-center text-gray-600">No records found.</p>
+          )}
+        </div>
       </div>
     ),
   };
