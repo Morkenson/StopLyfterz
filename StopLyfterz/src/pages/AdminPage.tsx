@@ -66,19 +66,6 @@ const Admin: React.FC = () => {
       </header>
       
     <div style={{ padding: '20px' }}>
-      <header className="header-outer">
-        <div className="header-inner responsive-wrapper">
-          <nav className="header-navigation-logo">
-            <a href="/">STOPLYFTERZ</a>
-          </nav>
-          <div className="header-inner">
-            <h1>Dashboard</h1>
-          </div>
-          <nav className="header-navigation">
-            <a href="/login">Login</a>
-          </nav>
-        </div>
-      </header>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <section>
         <h2>Pending Business Accounts</h2>

@@ -2,6 +2,9 @@ import { signUp } from '../dbController';
 import { createProfile } from '../dbController';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "../assets/styles/Header.css";
+import "../assets/styles/Login.css";
+import logo from "../assets/pictures/logo.png";
 
 const Register: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -39,12 +42,23 @@ const Register: React.FC = () => {
         };
 
     return (
-        <div>
-      <header>
-        <h1>STOPLYFTERZ</h1>
-        <button onClick={() => navigate("/")} className="custom-button">
-          Home Page
-        </button>
+      <div>
+      <header className="header-outer">
+        <div className="header-inner responsive-wrapper">
+        <nav className="header-navigation-logo">
+          <a href="/">
+            <img
+              src={logo} 
+              alt="StopLyfterz Logo"
+              className="header-logo"
+            />
+          </a>
+        </nav>
+        
+          <nav className="header-navigation">
+            <a href="/login">Logout</a>
+          </nav>
+        </div>
       </header>
 
         <div className="main-content">

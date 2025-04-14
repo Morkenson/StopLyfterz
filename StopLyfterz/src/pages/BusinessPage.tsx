@@ -42,7 +42,8 @@ const Business: React.FC = () => {
         </div>
       </header>
 
-      <section>
+      <div  style={{ padding: '20px' }}>
+        <section>
         <h2>Posted Lyfterz</h2>
         <hr></hr>
         {posts.length > 0 ? (
@@ -79,6 +80,7 @@ const Business: React.FC = () => {
           </button>
         </p>
       </section>
+    </div>
     </div>
   );
 };
