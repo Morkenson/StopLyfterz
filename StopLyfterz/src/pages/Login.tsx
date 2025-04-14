@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import "../assets/styles/Dashboard.css";
 import "../assets/styles/CustomButton.css";
 import "../assets/styles/Login.css";
+import logo from "../assets/pictures/logo.png";
+import "../assets/styles/Header.css";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -42,13 +44,23 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div>
-      <header>
-        <h1>STOPLYFTERZ</h1>
-        <button onClick={() => navigate("/")} className="custom-button">
-          Home Page
-        </button>
-      </header>
+      <div >
+          <header className="header-outer">
+              <div className="header-inner responsive-wrapper">
+                  <nav className="header-navigation-logo">
+                      <a href="/">
+                          <img
+                              src={logo}
+                              alt="StopLyfterz Logo"
+                              className="header-logo"
+                          />
+                      </a>
+                  </nav>
+                  <nav className="header-navigation">
+                      <a href="/login">Logout</a>
+                  </nav>
+              </div>
+          </header>
 
         
       <div className="main-content">
