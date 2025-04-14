@@ -1,0 +1,10 @@
+.page-background {
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: url('../pictures/background.png');
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    min-height: 300vh; /* Ensure it covers the viewport height */
+    padding: 20px;
+}
+

@@ -4,7 +4,6 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Admin from './pages/AdminPage';
 import Business from './pages/BusinessPage';
-import Form from './pages/LyfterForm';
 import AddCard from './components/AddCard';
 
 

@@ -4,6 +4,7 @@ import { useLifterCards } from "../components/ListCard"; // Import the hook
 import "../assets/styles/Dashboard.css";
 import "../assets/styles/Header.css";
 import "../assets/styles/CustomButton.css";
+import logo from "../assets/pictures/logo.png";
 
 const Dashboard: React.FC = () => {
   const [filter, setFilter] = useState("");
@@ -21,18 +22,16 @@ const Dashboard: React.FC = () => {
     <div>
       <header className="header-outer">
         <div className="header-inner responsive-wrapper">
-          <nav className="header-navigation-logo">
-            <a href="/">STOPLYFTERZ</a>
-          </nav>
-          <div className="header-inner">
-            <h1>Dashboard</h1>
-          </div>
-          <nav className="header-navigation">
-            <a href="/login">Login</a>
-          </nav>
-        </div>
-      </header>
-      <div className="search-bar">
+        <nav className="header-navigation-logo">
+          <a href="/">
+            <img
+              src={logo} 
+              alt="StopLyfterz Logo"
+              className="header-logo"
+            />
+          </a>
+        </nav>
+        <div className="search-bar">
         <input
           type="text"
           id="searchInput"
@@ -41,6 +40,12 @@ const Dashboard: React.FC = () => {
           onChange={(e) => setFilter(e.target.value)}
         />
       </div>
+          <nav className="header-navigation">
+            <a href="/login">Login</a>
+          </nav>
+        </div>
+      </header>
+      
       
         <LifterCardList />
     
