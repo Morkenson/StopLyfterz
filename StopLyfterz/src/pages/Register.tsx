@@ -1,4 +1,5 @@
 import { signUp } from '../dbController';
+import { createProfile } from '../dbController';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,6 +10,8 @@ const Register: React.FC = () => {
     const [message, setMessage] = useState<string | null>(null);
     const navigate = useNavigate();
 
+    const adminList = ['morkzachb@gmail.com'];
+
     const handleRegister = async(e: React.FormEvent) => {
         e.preventDefault();
         try {
@@ -16,6 +19,16 @@ const Register: React.FC = () => {
             if (user) {
               setMessage('Registration successful!');
               navigate('/login')
+
+              const isAdmin = adminList.map(admin => admin.toLowerCase()).includes(email.toLowerCase());
+
+                if (isAdmin) {
+                    await createProfile(email, 'admin', true);
+                } 
+                else {
+                    await createProfile(email, 'business', false);
+                    
+                }
               
             } else {
               setError('Registration failed');
