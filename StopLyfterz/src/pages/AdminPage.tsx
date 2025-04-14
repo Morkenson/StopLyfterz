@@ -1,5 +1,6 @@
 // src/pages/Admin.tsx
 import React, { useEffect, useState } from 'react';
+import "../assets/styles/Header.css";
 import {
   fetchPendingBusinessAccounts,
   approveBusinessAccount,
@@ -49,7 +50,19 @@ const Admin: React.FC = () => {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Admin Dashboard</h1>
+      <header className="header-outer">
+        <div className="header-inner responsive-wrapper">
+          <nav className="header-navigation-logo">
+            <a href="/">STOPLYFTERZ</a>
+          </nav>
+          <div className="header-inner">
+            <h1>Dashboard</h1>
+          </div>
+          <nav className="header-navigation">
+            <a href="/login">Login</a>
+          </nav>
+        </div>
+      </header>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       
       <section>
