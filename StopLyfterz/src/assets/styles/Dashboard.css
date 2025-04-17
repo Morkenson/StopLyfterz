@@ -45,7 +45,7 @@ header {
 
 
 .container {
-    min-width: 90%;
+    min-width: 95%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     row-gap: 50px;
@@ -68,7 +68,7 @@ header {
     align-content: center;
     box-shadow: 4px -4px 15px rgba(0, 0, 0.4, 0.4);
     height: 24rem;
-    width: 15rem;
+    width: 18rem;
 }
 
 .box-content {

@@ -24,18 +24,15 @@ const Login: React.FC = () => {
 
         const level = await getAccountRole(email);
 
-        if (level == 'admin') {
+        if (level == "admin") {
           navigate("/admin");
-        } 
-        else {
+        } else {
           navigate("/business");
         }
-      } 
-      else {
+      } else {
         setError("Login failed");
       }
-    }
-    catch (err: any) {
+    } catch (err: any) {
       console.error("Error during registration:", err);
       setError(err.message || "An unexpected error occurred.");
     }
@@ -50,34 +47,32 @@ const Login: React.FC = () => {
         </button>
       </header>
 
-        
       <div className="main-content">
-
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-        <button onClick={() => navigate("/register")}>Sign Up</button>
-      </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-    </div>
+        <h2>Login</h2>
+        <form onSubmit={handleLogin}>
+          <div>
+            <label>Email:</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label>Password:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">Login</button>
+          <button onClick={() => navigate("/register")}>Sign Up</button>
+        </form>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+      </div>
     </div>
   );
 };
