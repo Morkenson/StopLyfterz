@@ -1,15 +1,10 @@
-//import { VStack } from "@chakra-ui/react";
-//import AddCard from "./AddCard";
-//import DeleteCard from "./DeleteCard";
-//import EditCard from "./EditCard";
 import { supabase } from "../supabaseClient"; // Adjusted path to match expected location
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import "../assets/styles/ListCard.css";
 
 // Define TypeScript type for LifterCard
-export interface LifterCardData {
+export interface EditableLifterCardData {
   id: string;
   Picture: string;
   Location: string;
@@ -17,9 +12,8 @@ export interface LifterCardData {
   Description: string;
 }
 
-// Custom hook that returns a pre-rendered component
-export function useLifterCards(filter: string) {
-  const [lifterCards, setLifterCards] = useState<LifterCardData[]>([]);
+export function useEditableLifterCards(filter: string) {
+  const [lifterCards, setLifterCards] = useState<EditableLifterCardData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const navigate = useNavigate();
 
@@ -43,9 +37,26 @@ export function useLifterCards(filter: string) {
     card.Location.toLowerCase().includes(filter.toLowerCase())
   );
 
+  // Handle delete action
+  const handleDelete = async (id: string) => {
+    const { error } = await supabase.from("LifterCard").delete().eq("id", id);
+    if (error) {
+      console.error("Error deleting card:", error);
+      alert("Failed to delete the card.");
+    } else {
+      alert("Card deleted successfully!");
+      setLifterCards((prevCards) => prevCards.filter((card) => card.id !== id));
+    }
+  };
+
+  // Handle edit action
+  const handleEdit = (card: EditableLifterCardData) => {
+    navigate("/edit-card", { state: card });
+  };
+
   // Return a pre-rendered component
   return {
-    LifterCardList: () => (
+    EditableLifterCardList: () => (
       <div className="page-background">
         <div className="container">
           {loading ? (
@@ -54,10 +65,30 @@ export function useLifterCards(filter: string) {
             <div className="list-card-container">
               {filteredCards.map((card) => (
                 <div className="list-card" key={card.id}>
-                  <img src={card.Picture} alt={`Image of ${card.Company}`} className="list-card-image" />
+                  <div className="list-card-actions">
+                    <button
+                      className="list-card-delete"
+                      onClick={() => handleDelete(card.id)}
+                    >
+                      ✖
+                    </button>
+                    <button
+                      className="list-card-edit"
+                      onClick={() => handleEdit(card)}
+                    >
+                      ✎
+                    </button>
+                  </div>
+                  <img
+                    src={card.Picture}
+                    alt={`Image of ${card.Company}`}
+                    className="list-card-image"
+                  />
                   <div className="list-card-content">
                     <h3 className="list-card-title">{card.Company}</h3>
-                    <p className="list-card-location"><strong>Location:</strong> {card.Location}</p>
+                    <p className="list-card-location">
+                      <strong>Location:</strong> {card.Location}
+                    </p>
                     <p className="list-card-description">{card.Description}</p>
                   </div>
                 </div>

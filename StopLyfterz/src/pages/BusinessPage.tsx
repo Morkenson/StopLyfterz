@@ -4,10 +4,12 @@ import { useLifterCards } from "../components/ListCard"; // Import the hook
 import "../assets/styles/Header.css";
 import "../assets/styles/BusinessPage.css";
 import logo from "../assets/pictures/logo.png";
+import { useEditableLifterCards } from "../components/EditableListCard";
 
 const Business: React.FC = () => {
   const [filter, setFilter] = useState(""); // Filter for the ListCard
   const { LifterCardList } = useLifterCards(filter); // Fetch the ListCard component
+  const { EditableLifterCardList } = useEditableLifterCards(filter);
   const navigate = useNavigate();
 
   return (
@@ -60,8 +62,7 @@ const Business: React.FC = () => {
 
        
         
-          <LifterCardList />
-        
+          <EditableLifterCardList />       
       
     </div>
   );
