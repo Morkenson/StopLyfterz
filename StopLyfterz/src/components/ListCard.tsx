@@ -49,18 +49,18 @@ export function useLifterCards(filter: string) {
           {loading ? (
             <p className="text-center text-gray-600">Loading...</p>
           ) : filteredCards.length > 0 ? (
-            filteredCards.map((lifter) => (
-              <div className="box" key={lifter.id}>
-                <div className="box-content">
-                  <img src={lifter.Picture} alt={`Image of ${lifter.Picture}`} />
+            <div className="list-card-container">
+              {filteredCards.map((card) => (
+                <div className="list-card" key={card.id}>
+                  <img src={card.Picture} alt={`Image of ${card.Company}`} className="list-card-image" />
+                  <div className="list-card-content">
+                    <h3 className="list-card-title">{card.Company}</h3>
+                    <p className="list-card-location"><strong>Location:</strong> {card.Location}</p>
+                    <p className="list-card-description">{card.Description}</p>
+                  </div>
                 </div>
-                <div>
-                  <strong className="description">Location: {lifter.Location}</strong>
-                  <p className="description">Company: {lifter.Company}</p>
-                  <p className="lyfter-description"> Description: {lifter.Description}</p>
-                </div>
-              </div>
-            ))
+              ))}
+            </div>
           ) : (
             <p className="text-center text-gray-600">No records found.</p>
           )}

@@ -1,31 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLifterCards } from "../components/ListCard"; // Import the hook
 import "../assets/styles/Header.css";
-import "../assets/styles/CustomButton.css";
-import "../assets/styles/Header.css";
+import "../assets/styles/BusinessPage.css";
 import logo from "../assets/pictures/logo.png";
 
-interface Post {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-}
-
 const Business: React.FC = () => {
-  const [filter, setFilter] = useState("");
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [filter, setFilter] = useState(""); // Filter for the ListCard
+  const { LifterCardList } = useLifterCards(filter); // Fetch the ListCard component
   const navigate = useNavigate();
-  interface BoxData {
-    src: string;
-    alt: string;
-    description: string;
-  }
-
 
   return (
     <div >
-      <header className="header-outer">
+      {/* Sidebar */}
+      <aside className="sidebar">
+        <div className="sidebar-inner">
+          <nav className="sidebar-navigation-logo">
+            <a href="/">
+              <img src={logo} alt="StopLyfterz Logo" className="sidebar-logo" />
+            </a>
+          </nav>
+          
+          <nav className="sidebar-navigation">
+            <button onClick={() => navigate("/verify-account")}>Verify Your Buisness Account</button>
+            <button onClick={() => navigate("/add-card")}>Add Card</button>
+            <button onClick={() => navigate("/view-shoplifters")}>View My Shoplifters</button>
+            
+          </nav>
+        </div>
+      </aside>
+
+      {/* Main Content */}
+      
+        <header className="header-outer">
         <div className="header-inner responsive-wrapper">
         <nav className="header-navigation-logo">
           <a href="/">
@@ -36,51 +43,26 @@ const Business: React.FC = () => {
             />
           </a>
         </nav>
+        <div className="search-bar">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search photos by location..."
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+        />
+      </div>
           <nav className="header-navigation">
             <a href="/login">Logout</a>
           </nav>
         </div>
       </header>
 
-      <div  style={{ padding: '20px' }}>
-        <section>
-        <h2>Posted Lyfterz</h2>
-        <hr></hr>
-        {posts.length > 0 ? (
-          <ul>
-            {posts.map((post) => (
-              <li key={post.id} style={{ marginBottom: "10px" }}>
-                <img
-                  src={post.image}
-                  alt={post.name}
-                  style={{ width: "100px", marginRight: "10px" }}
-                />
-                <strong>{post.name}</strong>
-                <p>{post.description}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No posts available.</p>
-        )}
-      </section>
-
-            <section>
-                <h2>Pending Lyfterz</h2>
-                <hr></hr>
-                <p>No Lyfterz pending.</p>
-            </section>
-
-      <section>
-        <h2>Submit New Lyfter</h2>
-        <hr></hr>
-        <p>
-          <button onClick={() => navigate("/add-card")} className="custom-button">
-            Create new lyfter card
-          </button>
-        </p>
-      </section>
-    </div>
+       
+        
+          <LifterCardList />
+        
+      
     </div>
   );
 };
