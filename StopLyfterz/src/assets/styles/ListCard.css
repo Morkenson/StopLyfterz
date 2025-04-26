@@ -21,7 +21,7 @@
 /* Individual card styles */
 .list-card {
     background-color: #dadada; /* White background for the card */
-    border: 1px solid #000000; /* Light border around the card */
+    border:8px solid #d3d3d3; /* Light border around the card */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     overflow: hidden; /* Ensure content stays within the card */
@@ -72,41 +72,43 @@
 /* Card actions (Edit and Delete buttons) */
 .list-card-actions {
     display: flex;
-    gap: 10px;
+    gap: 5.5rem;
     padding: 10px;
     position: absolute; /* Position relative to the .list-card */
-    
+    top: 10px; /* Move to the bottom of the card */
+    left: 10px;
     z-index: 10;
 }
 
 /* Delete button */
 .list-card-delete {
-    background-color: #000000; /* Red background */
-    color: rgb(37, 0, 250);
+    background-color: #777777; /* Red background */
+    color: rgb(255, 255, 255);
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     padding: 5px 10px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     
 }
 
 .list-card-delete:hover {
-    background-color: #ff1a1a; /* Darker red on hover */
+    background-color: hwb(0 0% 100%); /* Darker red on hover */
 }
 
 /* Edit button */
+
 .list-card-edit {
-    background-color: #000000; /* Green background */
-    color: rgb(250, 250, 250);
+    background-color: #777777; /* Red background */
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 4px;
     padding: 5px 10px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
 }
 
 .list-card-edit:hover {
-    background-color: #00ff0d; /* Darker green on hover */
+    background-color: hsl(0, 0%, 0%); /* Darker green on hover */
 }
 

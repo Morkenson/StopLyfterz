@@ -1,6 +1,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Ensure the body takes up the full viewport height */
+    height: 100vh; /* Ensure the body takes up the full viewport height */
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }

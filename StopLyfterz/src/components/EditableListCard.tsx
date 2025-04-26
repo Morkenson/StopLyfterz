@@ -66,17 +66,18 @@ export function useEditableLifterCards(filter: string) {
               {filteredCards.map((card) => (
                 <div className="list-card" key={card.id}>
                   <div className="list-card-actions">
-                    <button
-                      className="list-card-delete"
-                      onClick={() => handleDelete(card.id)}
-                    >
-                      ✖
-                    </button>
+                    
                     <button
                       className="list-card-edit"
                       onClick={() => handleEdit(card)}
                     >
-                      ✎
+                      Edit
+                    </button>
+                    <button
+                      className="list-card-delete"
+                      onClick={() => handleDelete(card.id)}
+                    >
+                      Delete
                     </button>
                   </div>
                   <img
