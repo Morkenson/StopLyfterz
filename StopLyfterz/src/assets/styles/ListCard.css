@@ -75,8 +75,8 @@
     gap: 5.5rem;
     padding: 10px;
     position: absolute; /* Position relative to the .list-card */
-    top: 10px; /* Move to the bottom of the card */
-    left: 10px;
+    top: -.65rem; /* Move to the bottom of the card */
+    left: 1rem;
     z-index: 10;
 }
 
@@ -89,6 +89,7 @@
     padding: 5px 10px;
     cursor: pointer;
     font-size: 1.5rem;
+    font-family: "DM Sans", sans-serif;
     
 }
 
@@ -106,6 +107,7 @@
     padding: 5px 10px;
     cursor: pointer;
     font-size: 1.5rem;
+    font-family: "DM Sans", sans-serif;
 }
 
 .list-card-edit:hover {

@@ -51,7 +51,7 @@ export function useEditableLifterCards(filter: string) {
 
   // Handle edit action
   const handleEdit = (card: EditableLifterCardData) => {
-    navigate("/edit-card", { state: card });
+    navigate("/edit-card", { state: card }); // Pass card data to the EditCard page
   };
 
   // Return a pre-rendered component

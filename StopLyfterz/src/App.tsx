@@ -5,7 +5,7 @@ import Register from './pages/Register';
 import Admin from './pages/AdminPage';
 import Business from './pages/BusinessPage';
 import AddCard from './components/AddCard';
-
+import EditCard from './components/EditCard';
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/business" element={<Business />} />
-             
+              <Route path="/edit-card" element={<EditCard />} />
               <Route path="/business" element={<Business />} />
               
               <Route path="/add-card" element={<AddCard />} />
