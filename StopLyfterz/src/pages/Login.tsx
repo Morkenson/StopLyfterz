@@ -3,7 +3,6 @@ import { getAccountRole } from "../dbController";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles/Dashboard.css";
-import "../assets/styles/CustomButton.css";
 import "../assets/styles/Login.css";
 import logo from "../assets/pictures/logo.png";
 import "../assets/styles/Header.css";

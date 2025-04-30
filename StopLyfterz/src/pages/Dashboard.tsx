@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useLifterCards } from "../components/ListCard"; // Import the hook
 import "../assets/styles/Dashboard.css";
 import "../assets/styles/Header.css";
-import "../assets/styles/CustomButton.css";
 import logo from "../assets/pictures/logo.png";
 
 const Dashboard: React.FC = () => {
