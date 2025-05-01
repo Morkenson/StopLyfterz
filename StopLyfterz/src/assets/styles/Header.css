@@ -48,7 +48,7 @@ body {
 	padding: 10px 20px;
 	border: 2px solid #1d1d1d; /* Add a white border */
 
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	margin: 0;
 }
 

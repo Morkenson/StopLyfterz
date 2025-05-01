@@ -68,7 +68,7 @@ const AddCard: React.FC = (): JSX.Element => {
   };
 
     return (
-    
+    <div className="add-card-page">
      <div className="add-card-container">
             <button className="close-btn" onClick={() => navigate('/business')}>{"\u2715"}</button>
       <h2 className="add-card-header">Create New Lifter Card</h2>
@@ -121,7 +121,7 @@ const AddCard: React.FC = (): JSX.Element => {
         {uploading ? 'Submitting...' : 'Submit'}
       </button>
             </div>
-   
+    </div>
   );
 };
 

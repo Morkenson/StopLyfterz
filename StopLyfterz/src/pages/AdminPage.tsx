@@ -57,6 +57,7 @@ const Admin: React.FC = () => {
               className="header-logo"
             />
           </a>
+        <h2>Admin Dashboard</h2>
         </nav>
         
           <nav className="header-navigation">
