@@ -8,7 +8,9 @@ const AddCard: React.FC = (): JSX.Element => {
 
   const handleAddCard = async (data: {
     Picture: string;
-    Location: string;
+    City: string;
+    State: string;
+    ZipCode: string;
     Company: string;
     Description: string;
   }) => {

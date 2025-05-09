@@ -7,7 +7,9 @@ import "../assets/styles/ListCard.css";
 export interface EditableLifterCardData {
   id: string;
   Picture: string;
-  Location: string;
+  City: string;
+  State: string;
+  ZipCode: string;
   Company: string;
   Description: string;
 }
@@ -34,7 +36,7 @@ export function useEditableLifterCards(filter: string) {
 
   // Filter lifter cards based on the search input
   const filteredCards = lifterCards.filter((card) =>
-    card.Location.toLowerCase().includes(filter.toLowerCase())
+    card.City.toLowerCase().includes(filter.toLowerCase())
   );
 
   // Handle delete action
@@ -66,7 +68,6 @@ export function useEditableLifterCards(filter: string) {
               {filteredCards.map((card) => (
                 <div className="list-card" key={card.id}>
                   <div className="list-card-actions">
-                    
                     <button
                       className="list-card-edit"
                       onClick={() => handleEdit(card)}
@@ -88,7 +89,7 @@ export function useEditableLifterCards(filter: string) {
                   <div className="list-card-content">
                     <h3 className="list-card-title">{card.Company}</h3>
                     <p className="list-card-location">
-                      <strong>Location:</strong> {card.Location}
+                      <strong>Location:</strong> {card.City}, {card.State}
                     </p>
                     <p className="list-card-description">{card.Description}</p>
                   </div>

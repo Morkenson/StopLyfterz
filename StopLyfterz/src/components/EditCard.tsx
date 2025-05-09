@@ -9,18 +9,25 @@ const EditCard: React.FC = (): JSX.Element => {
   const cardData = locationData.state as {
     id: string;
     Picture: string;
-    Location: string;
+    City: string;
+    State: string;
+    ZipCode: string;
     Company: string;
     Description: string;
   };
 
   const handleEditCard = async (data: {
     Picture: string;
-    Location: string;
+    City: string;
+    State: string;
+    ZipCode: string;
     Company: string;
     Description: string;
   }) => {
-    const { error } = await supabase.from("LifterCard").update(data).eq("id", cardData.id);
+    const { error } = await supabase
+      .from("LifterCard")
+      .update(data)
+      .eq("id", cardData.id);
 
     if (error) {
       alert("There was an error updating the card.");
@@ -30,7 +37,9 @@ const EditCard: React.FC = (): JSX.Element => {
     }
   };
 
-  return <CardForm initialData={cardData} onSubmit={handleEditCard} isEditing />;
+  return (
+    <CardForm initialData={cardData} onSubmit={handleEditCard} isEditing />
+  );
 };
 
 export default EditCard;
