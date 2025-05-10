@@ -1,0 +1,94 @@
+/* AddCard.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    background-image: url('../assets/pictures/background.png');
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+.request-verification-container {
+    background-color: #818281;
+    color: #ffffff;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.request-verification-page {
+    min-height: 100vh;              /* fills screen */
+    display: flex;
+    justify-content: center;        /* horizontal center */
+    align-items: flex-start;        /* top-align */
+    padding: 60px 20px 40px;        /* top space, bottom pad */
+  }
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.request-verification-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.request-verification-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.request-verification-input,
+.request-verification-textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.request-verification-textarea {
+    resize: none;
+    height: 100px;
+}
+
+.request-verification-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .request-verification-button:disabled {
+        background-color: #565;
+        cursor: not-allowed;
+    }
+
+    .request-verification-button button:hover {
+        background-color: #ffffff;
+        color: #818281;
+    }

@@ -6,6 +6,7 @@ import Admin from './pages/AdminPage';
 import Business from './pages/BusinessPage';
 import AddCard from './components/AddCard';
 import EditCard from './components/EditCard';
+import VerifyAccount from './components/VerifyAccount';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
               <Route path="/business" element={<Business />} />
               
               <Route path="/add-card" element={<AddCard />} />
+              <Route path="/verify-account" element={<VerifyAccount />} />
           </Routes>
       </Router>
   );

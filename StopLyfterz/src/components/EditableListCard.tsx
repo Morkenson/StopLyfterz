@@ -32,10 +32,12 @@ export function useEditableLifterCards(filter: string) {
     fetchData();
   }, []);
 
-  // Filter lifter cards based on the search input
+  const normalizedFilter = (filter || '').toLowerCase();
+
   const filteredCards = lifterCards.filter((card) =>
-    card.Location.toLowerCase().includes(filter.toLowerCase())
+    (card?.Location || '').toLowerCase().includes(normalizedFilter)
   );
+
 
   // Handle delete action
   const handleDelete = async (id: string) => {

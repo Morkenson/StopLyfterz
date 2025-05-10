@@ -38,10 +38,12 @@ export function useLifterCards(filter: string) {
     fetchData();
   }, []);
 
-  // Filter lifter cards based on the search input
+  const normalizedFilter = (filter || '').toLowerCase();
+
   const filteredCards = lifterCards.filter((card) =>
-    card.Location.toLowerCase().includes(filter.toLowerCase())
+    (card?.Location || '').toLowerCase().includes(normalizedFilter)
   );
+
 
   // Return a pre-rendered component
   return {
