@@ -8,7 +8,6 @@ import { useEditableLifterCards } from "../components/EditableListCard";
 
 const Business: React.FC = () => {
   const [filter, setFilter] = useState(""); // Filter for the ListCard
-  const { LifterCardList } = useLifterCards(filter); // Fetch the ListCard component
   const { EditableLifterCardList } = useEditableLifterCards(filter);
   const navigate = useNavigate();
 

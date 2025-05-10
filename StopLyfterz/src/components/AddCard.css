@@ -1,4 +1,4 @@
-/* AddCard.css */
+
 
 body, html {
     margin: 0;
@@ -6,28 +6,31 @@ body, html {
     background-color: rgba(255, 255, 255, 0.9);
     background-image: url('../assets/pictures/background.png');
     background-size: cover;
+    background-attachment: fixed;
     background-repeat: repeat;
     background-position: center;
 }
 
 .add-card-container {
-    background-color: #818281;
+    background-color: #222222;
     color: #ffffff;
     padding: 20px;
-    max-width: 600px;
+    max-width: 35vw;
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
-    position: relative;
+    margin-left: 31vw;
+    margin-top: 5vh;
+    position: center;
 }
 
 .add-card-page {
-    min-height: 100vh;              /* fills screen */
+    min-height: 100vh;              
     display: flex;
-    justify-content: center;        /* horizontal center */
-    align-items: flex-start;        /* top-align */
-    padding: 60px 20px 40px;        /* top space, bottom pad */
+    justify-content: center;        
+    align-items: flex-start;        
+    padding: 40px 20px 40px;        
   }
 
 .close-btn {
@@ -62,6 +65,7 @@ body, html {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
+    color: white;
 }
 
 .add-card-input,
