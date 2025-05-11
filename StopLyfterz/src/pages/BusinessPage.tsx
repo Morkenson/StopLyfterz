@@ -24,7 +24,7 @@ const Business: React.FC = () => {
           </nav>
           
           <nav className="sidebar-navigation">
-            <button onClick={() => navigate("/verify-account")}>Verify Your Buisness Account</button>
+            <button onClick={() => navigate("/verify-business-account")}>Verify Your Buisness Account</button>
             <button onClick={() => navigate("/add-card")}>Add Card</button>
             <button onClick={() => navigate("/view-shoplifters")}>View My Shoplifters</button>
             

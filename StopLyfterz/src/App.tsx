@@ -6,7 +6,8 @@ import Admin from './pages/AdminPage';
 import Business from './pages/BusinessPage';
 import AddCard from './components/AddCard';
 import EditCard from './components/EditCard';
-import VerifyAccount  from './components/AdminVerifyAccount';
+import AdminVerifyAccount  from './components/AdminVerifyAccount';
+import VerifyAccount from './components/VerifyAccount';
 import EditableLifterCardList from './components/EditableLifterCardList';
 
 
@@ -17,12 +18,14 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/verify-business-account" element={<VerifyAccount />}/>
               <Route path="/admin" element={<Admin />}>
           {/* ① default view */}
           <Route index element={<EditableLifterCardList  />} />
+          
 
           {/* ② verify‑accounts view */}
-          <Route path="verify-accounts" element={<VerifyAccount />} />
+          <Route path="verify-accounts" element={<AdminVerifyAccount />} />
         </Route>
               <Route path="/business" element={<Business />} />
               <Route path="/edit-card" element={<EditCard />} />

@@ -42,13 +42,24 @@
   
   /* 4. Main content container */
   .main-content {
-    max-width: 600px;
-    margin: 40px auto;           /* center horizontally, spacing from top/bottom */
-    background-color: #fff;      /* white background for the content area */
-    border-radius: 8px;          /* slight rounding for a modern look */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    overflow: hidden;            /* in case of large content, keeps rounding consistent */
-  }
+  max-width: 600px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.login-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* keeps it top-aligned */
+  min-height: 100vh;
+  padding-top: 130px; /* this avoids overlap with sticky header */
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
   
   /* 5. Section heading (e.g., "Login") */
   .main-content h2 {

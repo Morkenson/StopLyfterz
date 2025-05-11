@@ -2,10 +2,10 @@ import { login } from "../dbController";
 import { getAccountRole } from "../dbController";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../assets/styles/Dashboard.css";
+//import "../assets/styles/Dashboard.css";
 import "../assets/styles/Login.css";
 import logo from "../assets/pictures/logo.png";
-import "../assets/styles/Header.css";
+//import "../assets/styles/Header.css";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -57,7 +57,8 @@ const Login: React.FC = () => {
                   </nav>
               </div>
           </header>
-
+    
+    <div className="login-page-wrapper">
       <div className="main-content">
         <h2>Login</h2>
         <form onSubmit={handleLogin}>
@@ -84,6 +85,7 @@ const Login: React.FC = () => {
         </form>
         {error && <p style={{ color: "red" }}>{error}</p>}
       </div>
+    </div>
     </div>
   );
 };
