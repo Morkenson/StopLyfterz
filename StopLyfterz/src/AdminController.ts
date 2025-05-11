@@ -10,6 +10,7 @@ export interface Profile {
    * Fetch all business accounts (or users) that are pending authorization.
    * Here we filter for those with authorized=false.
    */
+
   export async function fetchPendingBusinessAccounts(): Promise<Profile[]> {
     try {
       const { data, error } = await supabase
