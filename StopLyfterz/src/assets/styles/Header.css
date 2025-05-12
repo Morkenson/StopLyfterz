@@ -110,26 +110,6 @@ body {
 	color: inherit;
 }
 
-.search-bar {
-    flex-grow: 1; /* Allow the search bar to take up available space */
-    display: flex;
-    justify-content: center; /* Center the search bar horizontally */
-    align-items: center;
-    margin: 0 20px; /* Add spacing around the search bar */
-    position: relative; /* Ensure positioning works for negative margins */
-}
-
-.search-bar input {
-    width: 100%;
-    max-width: 40vw; /* Increase the maximum width */
-	max-height: 5vh;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #2e2e2e; /* Dark background for the input */
-    color: #ffffff; /* White text color */
-}
-
 .header-navigation {
 	display: flex;
 	align-items: center;
