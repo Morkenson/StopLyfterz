@@ -9,7 +9,7 @@ import EditCard from './components/EditCard';
 import AdminVerifyAccount  from './components/AdminVerifyAccount';
 import VerifyAccount from './components/VerifyAccount';
 import EditableLifterCardList from './components/EditableLifterCardList';
-
+import LifterCardsPage from './pages/MyLifters';
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
               <Route path="/business" element={<Business />} />
               
               <Route path="/add-card" element={<AddCard />} />
-              
+              <Route path="/view-shoplifters" element={<LifterCardsPage />} />
           </Routes>
       </Router>
   );

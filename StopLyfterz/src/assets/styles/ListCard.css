@@ -30,6 +30,7 @@
     max-width: 300px; /* Set a maximum width for the cards */
     margin: 0 auto; /* Center the card horizontally */
     position: relative; /* Make this card the positioning context for its children */
+    padding-bottom: 46px;
 }
 
 /* Card image */
@@ -71,13 +72,12 @@
 
 /* Card actions (Edit and Delete buttons) */
 .list-card-actions {
-    display: flex;
-    gap: 5.5rem;
-    padding: 10px;
-    position: absolute; /* Position relative to the .list-card */
-    top: -.65rem; /* Move to the bottom of the card */
-    left: 1rem;
-    z-index: 10;
+  position: absolute;
+  bottom: 8px;              /* 8 px from the bottom edge             */
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
 }
 
 /* Delete button */

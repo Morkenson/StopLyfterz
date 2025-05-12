@@ -14,7 +14,23 @@ const AddCard: React.FC = (): JSX.Element => {
     Company: string;
     Description: string;
   }) => {
-    const { error } = await supabase.from("LifterCard").insert([data]);
+
+    const {
+      data: { user },
+      error: authErr,
+    } = await supabase.auth.getUser();
+
+    if (authErr || !user) {
+      alert("You must be logged in to create a card.");
+      return;
+    }
+
+    const payload = {
+      ...data,
+      Email: user.email,          // <-- adjust column name if different
+    };
+
+    const { error } = await supabase.from("LifterCard").insert([payload]);
 
     if (error) {
       alert("There was an error creating the card.");

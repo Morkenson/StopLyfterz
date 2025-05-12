@@ -14,25 +14,29 @@ export interface EditableLifterCardData {
   Description: string;
 }
 
-export function useEditableLifterCards(filter: string) {
+export function useEditableLifterCards(filter: string, email: string) {
   const [lifterCards, setLifterCards] = useState<EditableLifterCardData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function fetchData() {
+    if (!email) return;
+
+    (async () => {
       try {
-        let { data, error } = await supabase.from("LifterCard").select("*");
+        const { data, error } = await supabase
+          .from("LifterCard")
+          .select("*")
+          .eq("Email", email);        // ❗ column must match schema
         if (error) throw error;
-        setLifterCards(data || []);
-      } catch (error) {
-        console.error("Error fetching lifter cards:", error);
+        setLifterCards(data ?? []);
+      } catch (err) {
+        console.error("Error fetching lifter cards:", err);
       } finally {
         setLoading(false);
       }
-    }
-    fetchData();
-  }, []);
+    })();
+  }, [email]);
 
   const normalizedFilter = (filter || '').toLowerCase();
 
