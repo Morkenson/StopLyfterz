@@ -1,79 +1,100 @@
 import React, { useEffect, useState } from 'react';
-import {
-  fetchPendingBusinessAccounts,
-  approveBusinessAccount,
-  rejectBusinessAccount,
-  Profile,
-} from '../AdminController';
+import { supabase } from "../supabaseClient";
+import '../assets/styles/BusinessVerification.css';
 
+/**
+ * Table schema (see screenshot):
+ *  id               int8  (PK)
+ *  locationSupervisor  text
+ *  supervisorEmail     text   ← unique per business
+ *  businessAddress     text
+ *  Authorized          boolean
+ */
+export interface BusinessRow {
+  id: number;
+  locationSupervisor: string | null;
+  supervisorEmail: string;
+  businessAddress: string | null;
+  Authorized: boolean;
+}
 
 const VerifyAccount: React.FC = () => {
-  const [pendingAccounts, setPendingAccounts] = useState<Profile[]>([]);
+  const [pendingAccounts, setPendingAccounts] = useState<BusinessRow[]>([]);
   const [error, setError] = useState<string | null>(null);
-  
-  
 
+  /** fetch businesses that are **not yet authorised** */
   useEffect(() => {
-    async function loadPending() {
-      try {
-        const profiles = await fetchPendingBusinessAccounts();
-        setPendingAccounts(profiles);
-      } catch (err: any) {
-        setError(err.message);
-      }
-    }
-    loadPending();
+    (async () => {
+      const { data, error } = await supabase
+        .from('BusinessVerification')
+        .select('*')
+        .eq('Authorized', false);
+
+      if (error) setError(error.message);
+      else setPendingAccounts(data ?? []);
+    })();
   }, []);
 
+  /** set `Authorized = TRUE` for the given supervisor e‑mail */
   const handleApprove = async (email: string) => {
-    try {
-      await approveBusinessAccount(email);
-      setPendingAccounts(pendingAccounts.filter((acc) => acc.Email !== email));
-    } catch (err: any) {
-      setError(err.message);
+    const { error } = await supabase
+      .from('BusinessVerification')
+      .update({ Authorized: true })
+      .eq('supervisorEmail', email);
+
+    if (error) {
+      setError(error.message);
+    } else {
+      setPendingAccounts(prev => prev.filter(row => row.supervisorEmail !== email));
     }
   };
 
+  /** reject = delete the row (or you could archive) */
   const handleReject = async (email: string) => {
-    try {
-      await rejectBusinessAccount(email);
-      setPendingAccounts(pendingAccounts.filter((acc) => acc.Email !== email));
-    } catch (err: any) {
-      setError(err.message);
-    }
+    const { error } = await supabase
+      .from('BusinessVerification')
+      .delete()
+      .eq('supervisorEmail', email);
 
+    if (error) setError(error.message);
+    else setPendingAccounts(prev => prev.filter(row => row.supervisorEmail !== email));
   };
 
-    return (
-  
-    <div style={{ padding: '20px' }}>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <section>
-          <h2>Pending Business Accounts</h2>
-          {pendingAccounts.length > 0 ? (
-            <ul>
-              {pendingAccounts.map((account) => (
-                <li key={account.Email} style={{ marginBottom: '10px' }}>
-                  <p>Email: {account.Email}</p>
-                  <p>Level: {account.Level}</p>
-                  <button
-                    onClick={() => handleApprove(account.Email)}
-                    style={{ marginRight: '10px' }}
-                  >
-                    Approve
-                  </button>
-                  <button onClick={() => handleReject(account.Email)}>
-                    Reject
-                  </button>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No pending business accounts.</p>
-          )}
-        </section>
-      </div>
-    );
-  };
+  return (
+  <div className="bv-container">
+    {error && <p className="bv-error">{error}</p>}
 
-  export default VerifyAccount;
+    <section className="bv-section">
+      <h2>Pending Business Accounts</h2>
+      {pendingAccounts.length ? (
+        <ul className="bv-account-list">
+          {pendingAccounts.map(acc => (
+            <li key={acc.id} className="bv-account-item">
+              <p>Email: {acc.supervisorEmail}</p>
+              <p>Supervisor: {acc.locationSupervisor ?? '—'}</p>
+              <p>Address: {acc.businessAddress ?? '—'}</p>
+
+              <button
+                className="bv-btn bv-btn-approve"
+                onClick={() => handleApprove(acc.supervisorEmail)}
+              >
+                Approve
+              </button>
+              <button
+                className="bv-btn bv-btn-reject"
+                onClick={() => handleReject(acc.supervisorEmail)}
+              >
+                Reject
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No pending business accounts.</p>
+      )}
+    </section>
+  </div>
+);
+};
+
+export default VerifyAccount;

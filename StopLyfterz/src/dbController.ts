@@ -72,3 +72,28 @@ export async function getAccountRole(email: string): Promise<string> {
     throw err;
   }
 }
+
+export async function getVerified(email: string | null): Promise<boolean> {
+  try {
+    const { data, error } = await supabase
+      .from('BusinessVerification')
+      .select('Authorized')
+      .eq('supervisorEmail', email)
+      .maybeSingle();
+
+    if (error || !data) {
+      
+      return false;
+    }
+    console.log("Data: ", data);
+    // Assuming "Authorized" is the field where the verification status is stored.
+    return data.Authorized as boolean;
+  } catch (err) {
+    console.error('Error getting verification status:', err);
+    throw err;
+  }
+}
+
+
+
+

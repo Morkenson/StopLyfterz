@@ -174,3 +174,23 @@ section hr {
     border: none;
     border-top: 1px solid #ccc; /* Light gray divider */
 }
+
+.verify-status {
+  /* pushes it down the same height as the header + a gap */
+  margin-top: calc(var(--header-outer-height) - 60px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  /* bring it on top of the header’s stacking context */
+  position: relative;
+  z-index: 1101;
+  font-size: 1.3rem;           /* header is 1000, sidebar 500 */
+}
+
+.verify-status .verify-badge {
+  width: 40px;
+  height: 40px;
+}

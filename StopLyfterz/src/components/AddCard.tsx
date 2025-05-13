@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 import CardForm from "./CardForm";
+import {getVerified} from '../dbController';
 
 const AddCard: React.FC = (): JSX.Element => {
   const navigate = useNavigate();
@@ -30,14 +31,19 @@ const AddCard: React.FC = (): JSX.Element => {
       Email: user.email,          // <-- adjust column name if different
     };
 
-    const { error } = await supabase.from("LifterCard").insert([payload]);
+    const verified = await getVerified(payload.Email ?? null);
 
-    if (error) {
-      alert("There was an error creating the card.");
-    } else {
+    if (verified) {
+      const { error } = await supabase.from("LifterCard").insert([payload]); 
+
+      if (!error) {
       alert("Card created successfully!");
       navigate("/business");
+      }
     }
+    else {
+      alert("Must be Verified to create a card");
+    }   
   };
 
   return <CardForm onSubmit={handleAddCard} />;

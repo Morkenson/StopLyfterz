@@ -237,3 +237,24 @@ body {
 		display: none;
 	}
 }
+
+.verify-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;     /* center inside sidebar */
+  margin-bottom: 1rem;         /* space above the buttons */
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.verify-status img {
+  width: 20px;
+  height: 20px;
+}
+.verify-badge {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
