@@ -68,6 +68,7 @@ const Register: React.FC = () => {
         </div>
       </header>
 
+      <div className="login-page-wrapper">
         <div className="main-content">
             <h2>Register</h2>
             <form onSubmit={handleRegister}>
@@ -95,6 +96,7 @@ const Register: React.FC = () => {
             {message && <p style={{ color: 'green' }}>{message}</p>}
         </div>
         </div>
+      </div>  
     );
 };
 
