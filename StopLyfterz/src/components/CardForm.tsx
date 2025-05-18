@@ -86,10 +86,11 @@ const CardForm: React.FC<CardFormProps> = ({
   };
 
   return (
-    <div className="add-card-container">
-      <h2 className="add-card-header">
-        {isEditing ? "Edit Lifter Card" : "Create New Lifter Card"}
-      </h2>
+    <div className="add-card-page">
+      <div className="add-card-container">
+        <h2 className="add-card-header">{isEditing ? "Edit Lifter Card" : "Create New Lifter Card"}
+          </h2>
+      
 
       {previewUrl && (
         <div className="add-card-preview">
@@ -162,6 +163,7 @@ const CardForm: React.FC<CardFormProps> = ({
           ? "Update"
           : "Submit"}
       </button>
+    </div>
     </div>
   );
 };

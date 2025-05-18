@@ -12,25 +12,23 @@ body, html {
 }
 
 .add-card-container {
-    background-color: #222222;
+    background-color: #818281;
     color: #ffffff;
     padding: 20px;
-    max-width: 35vw;
+    max-width: 600px;
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
-    margin-left: 31vw;
-    margin-top: 5vh;
-    position: center;
+    position: relative;
 }
 
 .add-card-page {
-    min-height: 100vh;              
+    min-height: 100vh;              /* fills screen */
     display: flex;
-    justify-content: center;        
-    align-items: flex-start;        
-    padding: 40px 20px 40px;        
+    justify-content: center;        /* horizontal center */
+    align-items: flex-start;        /* top-align */
+    padding: 60px 20px 40px;       
   }
 
 .close-btn {
@@ -65,7 +63,6 @@ body, html {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: white;
 }
 
 .add-card-input,
