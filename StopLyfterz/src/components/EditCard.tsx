@@ -33,7 +33,7 @@ const EditCard: React.FC = (): JSX.Element => {
       alert("There was an error updating the card.");
     } else {
       alert("Card updated successfully!");
-      navigate("/business");
+      navigate(-1);
     }
   };
 

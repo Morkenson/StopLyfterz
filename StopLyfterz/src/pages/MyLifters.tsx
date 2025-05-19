@@ -3,6 +3,8 @@ import { supabase } from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
 import { useEditableLifterCards } from "../components/EditableListCard"; // Import the hook
 import logo from "../assets/pictures/logo.png";
+import "../assets/styles/Header.css";
+import { Outlet, NavLink } from "react-router-dom";
 
 
 const LifterCardsPage: React.FC = () => {
@@ -32,6 +34,47 @@ const LifterCardsPage: React.FC = () => {
       /* could show a spinner while we look up the user */
       return <p>Loading user…</p>;
     }
+    const styles = {
+      shell: {
+        position: "fixed",      // lock to viewport
+        inset: 0,
+        display: "flex",
+        overflow: "hidden",     // prevent a 2nd scrollbar inside shell
+      } as React.CSSProperties,
+    
+      sidebar: {
+        width: 240,
+        flexShrink: 0,
+        background: "#2e2e2e",
+        color: "#fff",
+        overflowY: "auto",
+        display: "flex",
+        flexDirection: "column",
+        padding: "1rem 0",
+      } as React.CSSProperties,
+    
+      mainWrapper: {
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+      } as React.CSSProperties,
+    
+      mainContent: {
+        flex: 1,
+        overflowY: "auto",
+        overflowX: "hidden",
+        width: "100%",
+      } as React.CSSProperties,
+    
+      /* tidy sidebar buttons */
+      navBtn: {
+        display: "block",
+        padding: "0.75rem 1rem",
+        color: "#fff",
+        textDecoration: "none",
+        fontSize: "1rem",
+      } as React.CSSProperties,
+    };
   
     return (
         <div>
@@ -54,50 +97,32 @@ const LifterCardsPage: React.FC = () => {
       </aside>
 
         {/* Main Content */}
+    <div style={styles.mainWrapper}>
+        {/* Header still uses your global CSS classes */}
         <header className="header-outer">
-        <div className="header-inner responsive-wrapper">
-        <nav className="header-navigation-logo">
-          <a href="/business">
-            <img
-              src={logo} 
-              alt="StopLyfterz Logo"
-              className="header-logo"
-            />
-          </a>
-        </nav>
-        <div className="search-bar">
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Search photos by location..."
-          value={filter}
-          onChange={(e) => setFilter(e.target.value)}
-        />
-        <select
-              className="filter"
-              
-              
-            >
-              <option value="" disabled selected>
-                Filter by...
-              </option>
-              <option value="City">City</option>
-              <option value="State">State</option>
-              <option value="ZipCode">Zip Code</option>
-            </select>
-      </div>
-          <nav className="header-navigation">
-            <a href="/login">Logout</a>
-          </nav>
-        </div>
-      </header>
-        
+          <div className="header-inner responsive-wrapper">
+            <nav className="header-navigation-logo">
+              <NavLink end to="/business">
+                <img
+                  src={logo}
+                  alt="StopLyfterz Logo"
+                  className="header-logo"
+                />
+              </NavLink>
+              <h2>My Lifters</h2>
+            </nav>
+
+            <nav className="header-navigation">
+              <NavLink to="/login">Logout</NavLink>
+            </nav>
+          </div>
+        </header>
+          
           <EditableLifterCardList />       
       
-    </div>
-    )
-    
-      
+        </div>
+      </div>
+    );
   }
 
 export default LifterCardsPage;
