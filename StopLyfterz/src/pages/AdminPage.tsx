@@ -95,7 +95,7 @@ const Admin: React.FC = () => {
         <header className="header-outer">
           <div className="header-inner responsive-wrapper">
             <nav className="header-navigation-logo">
-              <NavLink end to="">
+              <NavLink end to="/admin">
                 <img
                   src={logo}
                   alt="StopLyfterz Logo"
