@@ -12,11 +12,12 @@ describe('Bulk create Lifter Cards with random web images', () => {
     // 1) Visit your login page
     cy.visit('/login')
 
-    // 2) Fill in your test user’s credentials
-    cy.get('input[type="email"]').type('morkzach@gmail.com')
-    cy.get('input[type="password"]').type('123456')
+    // 2) Fill in your test user's credentials
+    // TODO: Use environment variables or test fixtures for test credentials
+    cy.get('input[type="email"]').type('test-user@example.com')
+    cy.get('input[type="password"]').type('test-password-123')
 
-    // 3) Submit and verify you’re on the dashboard (or wherever)
+    // 3) Submit and verify you're on the dashboard (or wherever)
     cy.get('button[type="submit"]').click()
     cy.url().should('not.include', '/login')
   })

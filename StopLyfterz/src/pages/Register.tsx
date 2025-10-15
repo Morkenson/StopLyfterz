@@ -13,7 +13,9 @@ const Register: React.FC = () => {
     const [message, setMessage] = useState<string | null>(null);
     const navigate = useNavigate();
 
-    const adminList = ['morkzachb@gmail.com'];
+    // Admin emails should be configured via environment variables or database
+    // For security, do not hardcode personal emails in the source code
+    const adminList: string[] = [];
 
     const handleRegister = async(e: React.FormEvent) => {
         e.preventDefault();
