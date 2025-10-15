@@ -59,5 +59,3 @@ npm run build
 npm run test
 ```
 
-## Security Note
-Never commit your `.env` file or any files containing sensitive credentials to version control. The `.env` file is already included in `.gitignore` to prevent accidental commits.
